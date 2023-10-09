@@ -11,20 +11,20 @@ namespace Satbayev.DAL
         public int Id { get; set; }
         public DateTime CreateDate { get; set; }
        
-        public string FName { get; set; }
-        public string MName { get; set; }
-        public string LName { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
         public string ShortName
         {
             get 
             {
-                if(string.IsNullOrWhiteSpace(LName))
+                if(string.IsNullOrWhiteSpace(LastName))
                 {
-                    return string.Format("{0} {1}.", FName, MName[0]);
+                    return string.Format("{0} {1}.", FirstName, MiddleName[0]);
                 }
                 else
                 {
-                    return string.Format("{0} {1}. {2}.", FName, MName[0], LName[0]);
+                    return string.Format("{0} {1}. {2}.", FirstName, MiddleName[0], LastName[0]);
                 }
             }
         }
